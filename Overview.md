@@ -18,7 +18,7 @@ Text is not the only type of data we can store in a variable, the _basic_ dataty
 * Character `'A string like this'`
 * Integer `42`
 * Numeric `4.20`
-* Logical `True`
+* Logical `TRUE`
 
 Any basic datatype can be stored in an array (or a vector) by using the `c()` function.
 
