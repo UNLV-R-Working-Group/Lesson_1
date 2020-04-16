@@ -94,7 +94,7 @@ Take a moment to look through the kwargs on the documentation and play around wi
 
 What happens when you return the type of the data contained in our toy dataset? Though it's not clear from that, but in fact it *is* a dataframe. Dataframes hold vectors, which themselves hold the basic datatypes we talked about at the beginning. Confusing, I know. But we can always check to see if a given variable is a dataframe using the function `is.data.frame()`. Try it on our dataset.
 
-For the next section, you'll need to download [toy_dataset_2]() and import it into your R session just like we did before, but this time replacing the path with the path to the new dataset. 
+For the next section, you'll need to download [toy_dataset_2](toy_data_2.csv) and import it into your R session just like we did before, but this time replacing the path with the path to the new dataset. 
 
 
 
