@@ -14,13 +14,13 @@ Let's begin by creating our very first variable. After opening Rstudio, type in 
 
 Here, the text stored in the variable is surrounded by quotes, you can use single quotes or double quotes. Any text inside quotes is considered a 'string' in classical computer science terminology or as a 'character array' in R terminology. This is because the text is stored as an array (or ordered list) of characters. 
 
-Text is not the only type of data we can store in a variable, the basic datatypes are:
+Text is not the only type of data we can store in a variable, the _basic_ datatypes are:
 * Character `'A string like this'`
 * Integer `42`
 * Numeric `4.20`
 * Logical `True`
 
-Any basic datatype can be stored in an array by using the `c()` function.
+Any basic datatype can be stored in an array (or a vector) by using the `c()` function.
 
 `> array_1 = c(1,2,3,4,5)`
 
@@ -28,7 +28,7 @@ Any basic datatype can be stored in an array by using the `c()` function.
 
 `[1] 1 2 3 4 5`
 
-An element of any array can be indexed by using brackets like so
+An element of any vector can be indexed by using brackets like so
 
 `> array_1[3]`
 
@@ -56,7 +56,7 @@ In this section we will discover functions and how to use them. A function is si
 
 `[1] Hello World`
 
-Easy enough, right? In the last section we introduced a function that is called `c()` which turns a collection of data into an array. The inputs to `c()` are just the elements of the list, and the output is the list itself. Note that in order to store this list, you need to assign it to a variable, otherwise the list will simply be printed to the screen. Try the following two different commands.
+Easy enough, right? In the last section we introduced a function that is called `c()` which turns a collection of data into a vector. The inputs to `c()` are just the elements of the list, and the output is the list itself. Note that in order to store this list, you need to assign it to a variable, otherwise the list will simply be printed to the screen. Try the following two different commands.
 
 `> c(1,2,3,4,5)`
 
@@ -66,8 +66,8 @@ Note how the first prints the values to the screen while the second just creates
 
 `> typeof(array_1)`
 
-What happens if you try to store this as a variable? What is the datatype? It says "double", but that's not a datatype we have reviewed yet. The trick here is that some datatypes have a heirarchical structure. All "double" datatypes inherit the "numeric" datatype (or "class" as it is sometimes referred to). Verify this by using the `is.numeric()` function which takes a variable as its input and outputs a boolean or logical value (TRUE/FALSE). This can get very tricky, so here's a [graphic](data-structures-overview.png) that makes all the datatypes clear. We won't go too deep into this as it can take a whole session just to teach this thoroughly.
+What happens if you try to store this as a variable? What is the datatype? It says "double", but that's not a datatype we have reviewed yet. The trick here is that some datatypes have a heirarchical structure. All "double" datatypes inherit the "numeric" datatype (or "class" as it is sometimes referred to). Verify this by using the `is.numeric()` function which takes a variable as its input and outputs a boolean or logical value (TRUE/FALSE). This can get very tricky, so here's a [graphic](data-structures-overview.png) that makes all the datatypes in R clear. We won't go too deep into this as it can take a whole session just to teach this thoroughly.
 
-
+For the next step, you're going to need to download [toy_dataset_1]() from the class github page. 
 
 
