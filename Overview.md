@@ -68,6 +68,32 @@ Note how the first prints the values to the screen while the second just creates
 
 What happens if you try to store this as a variable? What is the datatype? It says "double", but that's not a datatype we have reviewed yet. The trick here is that some datatypes have a heirarchical structure. All "double" datatypes inherit the "numeric" datatype (or "class" as it is sometimes referred to). Verify this by using the `is.numeric()` function which takes a variable as its input and outputs a boolean or logical value (TRUE/FALSE). This can get very tricky, so here's a [graphic](data-structures-overview.png) that makes all the datatypes in R clear. We won't go too deep into this as it can take a whole session just to teach this thoroughly.
 
-For the next step, you're going to need to download [toy_dataset_1]() from the class github page. 
+For the next step, you're going to need to download [toy_dataset_1]() from the class github page. Import this data into R by using the following function
+
+`> toy = read.csv('/path/to/file/toy_data_1.csv')`
+
+Make sure to replace the path to your file with the path on your local machine to the toy data file. If you're confused about how to do this, ask an instructor (Theresa, Nell, or Dylan) and they will help you find it. Once you have the data in your R environment, use the `summary()` function to see some statistics about the data. Does anyone know what the skew of this data is based on this information? Note there is one column named 'data' with 1000 entries. For now we will only look at one column in a dataset, but note a dataset can have thousands of columns, which means thousands of variables. We will explore high dimensional datasets at a later date.
+
+Now we will learn about arguments and keyword arguments. To explore this topic, we will primarily be using the `hist()` function on our toy dataset. Arguments are the different inputs you can give to the function, in this case the only required argument is a vector of data. We can produce a histogram of this vector by typing
+
+`> hist(toy$data)`
+
+Note that we have to specify a column, or a vector, within our dataset using the `$` operator. That is because R does not know which column to make the histogram out of unless we tell it, even though there is only one column in this dataset. It is important to know what the argument's datatype needs to be for this reason, and I highly reccomend looking at the documentation for each function you use the first couple times you use it. The docs for `hist()` can be found by googling 'R hist()' or by following this [link](https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/hist). Getting familiar with sites like https://www.rdocumentation.org is of the utmost importance and here in the lecture I'd like to take a minute to familiarize you with the layout as it uses common terminology and syntax across many computer science manuals. 
+
+Note that many of the arguments are preceeded by a name and an equals sign like "col = ", these are called keyword arguments (kwargs) and they use a keyword to denote their value. Most of the time these are optional and have default values, but because they use a specific word to denote their presence, we can call them in any order. Let's make our histogram green!
+
+`> hist(toy$data, col = 'green')`
+
+Cool, huh? A couple things to note, each kwarg and its corresponding value are separated by a comma, and the value must be in quotes if it is text. Now, let's see if we can add a title and labels to our axes.
+
+`> hist(toy$data, col = 'green', main = 'Title', xlab = 'x label', ylab = 'y label')`
+
+Take a moment to look through the kwargs on the documentation and play around with your histogram to customize it. Next we will learn about dataframes.
+
+### Dataframes: the bread and butter of data science in R
+
+
+
+
 
 
