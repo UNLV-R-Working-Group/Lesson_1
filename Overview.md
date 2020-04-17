@@ -68,7 +68,7 @@ Note how the first prints the values to the screen while the second just creates
 
 What happens if you try to store this as a variable? What is the datatype? It says "double", but that's not a datatype we have reviewed yet. The trick here is that some datatypes have a heirarchical structure. All "double" datatypes inherit the "numeric" datatype (or "class" as it is sometimes referred to). Verify this by using the `is.numeric()` function which takes a variable as its input and outputs a boolean or logical value (TRUE/FALSE). This can get very tricky, so here's a [graphic](data-structures-overview.png) that makes all the datatypes in R clear. We won't go too deep into this as it can take a whole session just to teach this thoroughly.
 
-For the next step, you're going to need to download [toy_dataset_1]() from the class github page. Import this data into R by using the following function
+For the next step, you're going to need to download [toy_dataset_1](toy_data_1.csv) from the class github page. Import this data into R by using the following function
 
 `> toy = read.csv('/path/to/file/toy_data_1.csv')`
 
@@ -94,8 +94,50 @@ Take a moment to look through the kwargs on the documentation and play around wi
 
 What happens when you return the type of the data contained in our toy dataset? Though it's not clear from that, but in fact it *is* a dataframe. Dataframes hold vectors, which themselves hold the basic datatypes we talked about at the beginning. Confusing, I know. But we can always check to see if a given variable is a dataframe using the function `is.data.frame()`. Try it on our dataset.
 
-For the next section, you'll need to download [toy_dataset_2](toy_data_2.csv) and import it into your R session just like we did before, but this time replacing the path with the path to the new dataset. 
+Dataframes are the objects that hold most of the data in R. Every time you import data from an Excel spreadsheet it will be imported as a datafram in R. There's a *ton* of functionality built into dataframes, and we will only touch on a few for this lecture. For the next section, you'll need to download [toy_dataset_2](toy_data_2.csv) and import it into your R session just like we did before, but this time replacing the path with the path to the new dataset. 
 
+`> toy2 = read.csv('/path/to/file/toy_data_2.csv')`
 
+Let's get a quick view of the data by using the `summary()` function. What are the variable names, and datatypes of each of them? Print the first few rows of the dataframe by using the `head()` function to get a visual of what our data looks like. Each row can be thought of as one data point, or if you're more familiar with clinical data, one subject. Each row contains three variables, each a measurement of the data point. Let's take a look at the distribution of one variable.
+
+Access a column with the `$` operator followed by the name of the column you wish to access
+
+`> hist(toy2$v1)`
+
+Access the first 20 rows of this variable by using square brackets following the variable name
+
+`> toy2$v2[1:20]`
+
+It is also possible to index columns by their number. An equivalent command to the previous command would be 
+
+`> toy2[1:20, 2]`
+
+Leaving either row or columns indices blank will return all rows or columns respectively. To return the first 20 rows of all three variables use this command
+
+`> toy2[1:20, ]`
+
+But we can also index based on a conditional statement, which proves very useful when dealing with high dimensional datasets. There are a few operators we need to understand before we get into conditional statements though. The basic ones you will likely need to know are:
+* `<` means less than 
+* `>` means greater than
+* `==` means exactly equal to
+* `|` means "OR"
+* `&` means "AND"
+
+Let's put this to use in our dataset. Select just the portion of the dataframe that has "green" in the third column with the following command. You can read this command as "the rows of toy2 where v3 in toy2 is equal to 'green'". Note that we want just the rows that match the condition, and all the columns.
+
+`> toy2[toy2$v3=='green', ]` 
+
+How many values does this return? Use the `dim()` function to find out. Does this match the number we got when we got a summary at the beginning? Look at the histogram of v2, around what integer is the mean of this normal distribution? Let's select only the bottom half of this distribution using the following command. Note the column number!
+
+`> toy2[toy2$v2 < 20, 2]`
+
+How many values does this return? Does the histogram of these values look like the left half of a normal distribution? What if we wanted to combine our searches to produce only the bottom half of v2 that are labeled "green" in v3? Use the following command to find out. Note that the conditions are grouped by using parentheses.
+
+`> toy2[(toy2$v2 < 20) & (toy2$v3=='green'), ]`
+
+You might notice how powerful this tool can be already, as an exercise produce a dataframe with all three variables but only containing rows labeled 'red' or 'cyan' in the third column. Then check your work using the `dim()` function.
+
+### Summary
+Today we learned the basics of functions, arguments, dataframes, and datatypes. Next week we will start learning more about practical applications of R by doing basic statistical analysis on more toy data. Hope you all enjoyed this little learning session!
 
 
