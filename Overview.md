@@ -5,6 +5,8 @@ In this lesson we will cover three very basic topics
 * Functions, arguments, and keyword arguments
 * Dataframes: the bread and butter of data science in R
 
+_Big thanks to Theresa Clark and Cornelia Fanter for offering their expertise during these lessons_
+
 ### Variables and datatypes in R
 What is a variable? A variable is an object that references some data by a specific name. In this exercise we will learn about how to create a variable, different types of variables, and why we need to understand these basic concepts.
 
