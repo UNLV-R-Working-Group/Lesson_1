@@ -111,8 +111,8 @@ Let's get a quick view of the data by using the `summary()` function. What are t
 For those that have R Version 4.0.2, the `summary()` function will be slightly different for categorical data. Instead use the `table()` function to see the distribution of the categories.
  `> table(toy2$v3)`
  
- `  cyan  green    red yellow 
-     250    250    250    250 `
+ `cyan  green    red yellow` 
+ `250    250    250    250 `
 
 Access a column with the `$` operator followed by the name of the column you wish to access
 
