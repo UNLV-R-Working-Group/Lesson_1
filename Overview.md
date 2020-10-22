@@ -112,6 +112,7 @@ For those that have R Version 4.0.2, the `summary()` function will be slightly d
  `> table(toy2$v3)`
  
  `cyan  green    red yellow` 
+ 
  `250    250    250    250 `
 
 Access a column with the `$` operator followed by the name of the column you wish to access
