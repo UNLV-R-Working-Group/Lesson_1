@@ -48,6 +48,12 @@ To access every element **except** one, use negative numbers
 
 `[1] 1 2 4 5`
 
+To remove multiple elements, store those negative numbers in a collection
+
+`> array_1[-c(3:5)]`
+
+`[1] 1 2`
+
 What should we do if we don't know the type of a variable? Sometimes it's useful for debugging (and you will be doing a lot of that) to know what the datatype of a variable is. But when we print the variable to the screen, we only get the value, not the type. In the next section we will discuss functions, one of which we can use to display the type of a variable.
 
 ### Functions, arguments, and keyword arguments
@@ -138,6 +144,7 @@ How many values does this return? Does the histogram of these values look like t
 `> toy2[(toy2$v2 < 20) & (toy2$v3=='green'), ]`
 
 You might notice how powerful this tool can be already, as an exercise produce a dataframe with all three variables but only containing rows labeled 'red' or 'cyan' in the third column. Then check your work using the `dim()` function.
+
 
 ### Summary
 Today we learned the basics of functions, arguments, dataframes, and datatypes. Next week we will start learning more about practical applications of R by doing basic statistical analysis on more toy data. Hope you all enjoyed this little learning session!
