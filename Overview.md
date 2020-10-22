@@ -109,11 +109,12 @@ Dataframes are the objects that hold most of the data in R. Every time you impor
 Let's get a quick view of the data by using the `summary()` function. What are the variable names, and datatypes of each of them? Print the first few rows of the dataframe by using the `head()` function to get a visual of what our data looks like. Each row can be thought of as one data point, or if you're more familiar with clinical data, one subject. Each row contains three variables, each a measurement of the data point. Let's take a look at the distribution of one variable.
 
 For those that have R Version 4.0.2, the `summary()` function will be slightly different for categorical data. Instead use the `table()` function to see the distribution of the categories.
+
  `> table(toy2$v3)`
  
  `cyan  green    red yellow` 
  
- `250    250    250    250 `
+   `250    250    250    250 `
 
 Access a column with the `$` operator followed by the name of the column you wish to access
 
